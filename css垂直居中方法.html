@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css垂直居中</title>
+</head>
+<body>
+	<h1>方法1 CSS table 中 Vertical-Align 垂直居中</h1>
+	<style type="text/css">
+		*{margin:0;padding:0;box-sizing: border-box;}
+		.parent1{display: table;width:200px;height:200px;border:1px solid #ddd;}
+		.child1{
+			  display: table-cell;
+			  vertical-align: middle;
+			  width: 20px;
+			  height:20px;
+			}
+	</style>
+	<div class="parent1">
+	  <div class="child1">在知道父级元素的宽度和高度时使用该方法</div>
+	</div>
+	<h1>方法2 绝对定位 and 负 Margin</h1>
+	<style type="text/css">
+		.parent2 {
+		  position: relative;
+		  height: 800px;
+		}
+		.child2 {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  height: 30%;
+		  width: 50%;
+		  margin: -15% 0 0 -25%; /*margin 为负值且为自身尺寸的一半*/
+		}
+	</style>
+	<div class="parent2">
+	  <div class="child2">在知道父级元素的宽度和高度时使用该方法</div>
+	</div>
+
+	<h1>方法3 绝对定位 and margin auto</h1>
+	<style type="text/css">
+		.parent3 {
+		  position: relative;
+		  height: 300px;
+		}
+		.child3 {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		  width: 50%;
+		  height: 30%;
+		  margin: auto;
+		}
+	</style>
+	<div class="parent3">
+	  <div class="child3">适用于所有block元素---ie8下不兼容</div>
+	</div>
+
+	<h1>方法4 绝对定位 and transform3d</h1>
+	<style type="text/css">
+		.parent4 {
+		  position: relative;
+		  height: 300px;
+		}
+		.child4 {
+		  position: absolute;
+		  top:50%;
+		  left:50%;
+		  width: 150px;
+		  height: 130px;
+		  transform:translate3d(-50%,-50%,0); /*向左向上移动自身尺寸的一半*/
+		}
+	</style>
+	<div class="parent4">
+	  <div class="child4">适用于所有block元素---ie8下不兼容</div>
+	</div>
+
+	<h1>方法5 flex布局</h1>
+	<style type="text/css">
+		.parent5 {
+		  display: flex;
+		  display: -webkit-box;
+		  display: -webkit-flex;
+
+		  display: -moz-box;
+		  display: -moz-flex;
+		  display: -ms-flexbox;
+
+		    /* 子元素主轴（默认为水平轴）上居中*/
+		  -webkit-box-align: center;
+		  -moz-box-align: center;
+		  -ms-flex-pack:center;/* IE 10 */
+		  -webkit-justify-content: center;
+		  -moz-justify-content: center;
+		  justify-content: center;/* IE 11+,Firefox 22+,Chrome 29+,Opera 12.1*/
+
+		  /* 子元素交叉轴（默认为纵轴）居中 */
+		  -webkit-box-pack: center;
+		  -moz-box-pack: center;
+		  -ms-flex-align: center;/* IE 10 */
+
+		  -webkit-align-items: center;
+		  -moz-align-items: center;
+		  align-items: center;
+
+		  height: 300px;
+		}
+		.child5 {
+		  width: 150px;
+		  height: 130px;
+		}
+	</style>
+	<div class="parent5">
+	  <div class="child5">flex  布局方式</div>
+	</div>
+</body>
+</html>
