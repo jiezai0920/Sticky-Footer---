@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sticky Footer</title>
+</head>
+<body>
+	<!-- <style type="text/css">
+		html, body {
+		  height: 100%;
+		  margin: 0;
+		}
+		.wrapper {
+		  min-height: 100%;
+
+		  /* 等于footer的高度 */
+		  margin-bottom: -50px;
+		}
+		.footer,
+		.push {
+		  height: 50px;
+		}
+	</style>
+	<div class="wrapper">
+		<h1>方法一  将内容部分的底部外边距设为负数</h1>
+		<div class="push"></div>
+	</div>
+	<footer class="footer">sssssss</footer> -->
+
+
+	<!-- <style type="text/css">
+		html, body {
+		  height: 100%;
+		  margin: 0;
+		}
+		.content {
+		  min-height: 100%;
+		}
+		.content-inside {
+		  padding: 20px;
+		  padding-bottom: 50px;
+		}
+		.footer {
+		  height: 50px;
+		  margin-top: -50px;
+		}
+	</style>
+	<h1>方法二 将页脚的顶部外边距设为负数</h1>
+	<div class="content">
+		<div class="content-inside">
+		  content
+		</div>
+	</div>
+	<footer class="footer">sssssss</footer> -->
+
+	<!-- <style type="text/css">
+		html, body {
+		  height: 100%;
+		  margin: 0;
+		}
+		.content {
+		  min-height: 100%;
+		}
+		.content-inside {
+		  padding: 20px;
+		  padding-bottom: 50px;
+		}
+		.footer {
+		  height: 50px;
+		  margin-top: -50px;
+		}
+	</style>
+	<h1>方法三 使用calc()设置内容高度</h1>
+	<div class="content">
+		content
+	</div>
+	<footer class="footer">dadasssss</footer> -->
+
+	<!-- <style type="text/css">
+		html {
+		  height: 100%;
+		}
+		body {
+		  min-height: 100%;
+		  display: flex;
+		  flex-direction: column;
+		}
+		.content {
+		  flex: 1;
+		}
+	</style>
+	<h1>方法四 使用flexbox弹性盒布局</h1>
+	<div class="content">
+		content
+	</div>
+	<footer class="footer">dadasssss</footer> -->
+
+	<style type="text/css">
+		html {
+		  height: 100%;
+		}
+		body {
+		  min-height: 100%;
+		  display: grid;
+		  grid-template-rows: 1fr auto;
+		}
+		.footer {
+		  grid-row-start: 2;
+		  grid-row-end: 3;
+		}
+	</style>
+	<h1>方法五 使用Grid网格布局</h1>
+	<p>遗憾的是，网格布局（Grid layout）目前仅支持Chrome Canary和Firefox Developer Edition版本。</p>
+	<div class="content">
+		content
+	</div>
+	<footer class="footer">dadasssss</footer>
+</body>
+</html>
